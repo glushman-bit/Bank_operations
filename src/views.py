@@ -27,3 +27,6 @@ def main_info(df: DataFrame, currency, stocks):
         "stock_prices": stock_price
     }
     return json.dumps(result, ensure_ascii=False, indent=4)
+
+
+

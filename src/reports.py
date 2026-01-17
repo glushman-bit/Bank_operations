@@ -58,6 +58,6 @@ def spending_by_category(transactions: pd.DataFrame, category: str, date: Option
 
     return json.dumps(result, ensure_ascii=False, indent=4)
 
-# if __name__ == "__main__":
-#     df = pd.read_excel("../data/operations.xlsx")
-#     print(spending_by_category(df, "супермаркеты", "2021.11.12"))
+if __name__ == "__main__":
+    df = pd.read_excel("../data/operations.xlsx")
+    print(spending_by_category(df, "супермаркеты", "2021.11.12"))
