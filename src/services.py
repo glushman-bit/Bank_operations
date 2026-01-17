@@ -41,7 +41,7 @@ def find_transactions_by_phone(df: DataFrame, phone: str) -> list:
     return result_df.to_json(orient="records", force_ascii=False, indent=4)
 
 
-# @log()
+@log()
 def cashback_analysis(df: DataFrame, year: int, month: int) -> Dict[str, float]:
     """Анализирует категории повышенного кэшбека."""
 
