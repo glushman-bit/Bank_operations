@@ -1,11 +1,6 @@
-
 import json
 from datetime import datetime
 from src.reports import spending_by_category
-
-import pandas as pd
-import pytest
-
 
 
 def test_spending_by_category_success(transactions_data):
@@ -19,6 +14,7 @@ def test_spending_by_category_success(transactions_data):
     assert data["От"] == "2025.10.12"
     assert data["До"] == "2026.01.12"
 
+
 def test_spending_by_category_empty(transactions_data):
     date = datetime(2026, 1, 12)
 
@@ -27,4 +23,3 @@ def test_spending_by_category_empty(transactions_data):
 
     assert data["Категория"] == "еда"
     assert data["Потрачено"] == 0
-

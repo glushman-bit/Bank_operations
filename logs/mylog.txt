@@ -1,6 +1,80 @@
-2026-01-17 14:08:40,721 - spending_by_category - app - INFO: - Запрос трат по категории: категория=супермаркеты, дата=2026-01-12 00:00:00
-2026-01-17 14:08:40,728 - spending_by_category - app - INFO: - Расчет трат: количество операций=3, сумма=1000
-2026-01-17 14:08:40,728 - wrapper - app - INFO: - Успешный запуск функции: spending_by_category - Функция возвращает траты по заданной категории за последние три месяца. 
-2026-01-17 14:08:40,731 - spending_by_category - app - INFO: - Запрос трат по категории: категория=еда, дата=2026-01-12 00:00:00
-2026-01-17 14:08:40,733 - spending_by_category - app - WARNING: - Траты по категории не найдены: категория=еда, период=2025-10-12 00:00:00 - 2026-01-12 00:00:00
-2026-01-17 14:08:40,733 - wrapper - app - INFO: - Успешный запуск функции: spending_by_category - Функция возвращает траты по заданной категории за последние три месяца. 
+2026-01-17 14:32:18,882 - wrapper - app - INFO: - Успешный запуск функции: my_func - Функция для проверки декоратора
+2026-01-17 14:32:18,887 - wrapper - app - ERROR: - Ошибка: my_func: TypeError: unsupported operand type(s) for +: 'int' and 'str'
+Traceback (most recent call last):
+  File "D:\Projects\HomeWorks\Kursovaya_1\src\decorators.py", line 35, in wrapper
+    result = func(*args, **kwargs)
+  File "D:\Projects\HomeWorks\Kursovaya_1\src\decorators.py", line 51, in my_func
+    return x + y
+           ~~^~~
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+2026-01-17 14:32:18,897 - spending_by_category - app - INFO: - Запрос трат по категории: категория=супермаркеты, дата=2026-01-12 00:00:00
+2026-01-17 14:32:18,904 - spending_by_category - app - INFO: - Расчет трат: количество операций=3, сумма=1000
+2026-01-17 14:32:18,905 - wrapper - app - INFO: - Успешный запуск функции: spending_by_category - Функция возвращает траты по заданной категории за последние три месяца.
+2026-01-17 14:32:18,909 - spending_by_category - app - INFO: - Запрос трат по категории: категория=еда, дата=2026-01-12 00:00:00
+2026-01-17 14:32:18,913 - spending_by_category - app - WARNING: - Траты по категории не найдены: категория=еда, период=2025-10-12 00:00:00 - 2026-01-12 00:00:00
+2026-01-17 14:32:18,914 - wrapper - app - INFO: - Успешный запуск функции: spending_by_category - Функция возвращает траты по заданной категории за последние три месяца.
+2026-01-17 14:32:18,926 - cashback_analysis - app - INFO: - Вывод кэшбэка за год=2025, месяц=10
+2026-01-17 14:32:18,931 - cashback_analysis - app - INFO: - Вывод кэшбэка за год=2025, месяц=11
+2026-01-17 14:32:18,936 - cashback_analysis - app - INFO: - Вывод кэшбэка за год=2025, месяц=12
+2026-01-17 14:32:18,944 - find_transactions_by_phone - app - INFO: - Вывод транзакций по номеру телефона: тел.=+7 (123) 456-78-90
+2026-01-17 14:32:18,945 - wrapper - app - INFO: - Успешный запуск функции: find_transactions_by_phone - Возвращает JSON со всеми транзакциями, содержащими указанный номер телефона.
+2026-01-17 14:32:18,947 - find_transactions_by_phone - app - WARNING: - Ошибка ввода номера телефона: тел.=
+2026-01-17 14:32:18,947 - wrapper - app - INFO: - Успешный запуск функции: find_transactions_by_phone - Возвращает JSON со всеми транзакциями, содержащими указанный номер телефона.
+2026-01-17 14:32:18,950 - find_transactions_by_phone - app - WARNING: - Введенный номер телефона не найден: тел.=9999999999
+2026-01-17 14:32:18,950 - wrapper - app - INFO: - Успешный запуск функции: find_transactions_by_phone - Возвращает JSON со всеми транзакциями, содержащими указанный номер телефона.
+2026-01-01 10:00:00,000 - get_time_for_greeting - app - INFO: - Вывод приветствия.
+2026-01-01 10:00:00,000 - wrapper - app - INFO: - Успешный запуск функции: get_time_for_greeting - Функция приветствия в зависимости от времени суток
+2026-01-01 16:00:00,000 - get_time_for_greeting - app - INFO: - Вывод приветствия.
+2026-01-01 16:00:00,000 - wrapper - app - INFO: - Успешный запуск функции: get_time_for_greeting - Функция приветствия в зависимости от времени суток
+2026-01-01 22:00:00,000 - get_time_for_greeting - app - INFO: - Вывод приветствия.
+2026-01-01 22:00:00,000 - wrapper - app - INFO: - Успешный запуск функции: get_time_for_greeting - Функция приветствия в зависимости от времени суток
+2026-01-01 04:00:00,000 - get_time_for_greeting - app - INFO: - Вывод приветствия.
+2026-01-01 04:00:00,000 - wrapper - app - INFO: - Успешный запуск функции: get_time_for_greeting - Функция приветствия в зависимости от времени суток
+2026-01-17 14:32:19,168 - get_list_cards - app - INFO: - Вывод списка карт.
+2026-01-17 14:32:19,169 - wrapper - app - INFO: - Успешный запуск функции: get_list_cards - Функция, которая принимает DataFrame и возвращает список карт с расходами
+2026-01-17 14:32:19,173 - top_transactions - app - INFO: - Вывод списка Топ-5 платежей.
+2026-01-17 14:32:19,173 - wrapper - app - INFO: - Успешный запуск функции: top_transactions - Функция, которая принимает DataFrame и возвращает список Top-5 платежей
+2026-01-17 14:32:19,176 - get_curs_currency - app - INFO: - Запрос на сайт: https://api.apilayer.com
+2026-01-17 14:32:19,176 - get_curs_currency - app - INFO: - Вывод курса валют: USD
+2026-01-17 14:32:19,176 - wrapper - app - INFO: - Успешный запуск функции: get_curs_currency - Функция, которая возвращает курс валют по API запросу
+2026-01-17 14:32:19,178 - get_curs_currency - app - INFO: - Запрос на сайт: https://api.apilayer.com
+2026-01-17 14:32:19,179 - get_curs_currency - app - ERROR: - Сайт не доступен: 500
+2026-01-17 14:32:19,179 - wrapper - app - INFO: - Успешный запуск функции: get_curs_currency - Функция, которая возвращает курс валют по API запросу
+2026-01-17 14:32:19,181 - get_curs_currency - app - INFO: - Запрос на сайт: https://api.apilayer.com
+2026-01-17 14:32:19,182 - get_curs_currency - app - ERROR: - Неверный формат файла JSON
+Traceback (most recent call last):
+  File "D:\Projects\HomeWorks\Kursovaya_1\src\utils.py", line 88, in get_curs_currency
+    data = data.json()
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+json.decoder.JSONDecodeError: err: line 1 column 1 (char 0)
+2026-01-17 14:32:19,184 - wrapper - app - INFO: - Успешный запуск функции: get_curs_currency - Функция, которая возвращает курс валют по API запросу
+2026-01-17 14:32:19,185 - stock_prices - app - INFO: - Запрос на сайт: https://api.twelvedata.com
+2026-01-17 14:32:19,186 - stock_prices - app - INFO: - Вывод курса акций: AAPL
+2026-01-17 14:32:19,186 - wrapper - app - INFO: - Успешный запуск функции: stock_prices - Функция, которая возвращает стоимость акций по API запросу
+2026-01-17 14:32:19,187 - stock_prices - app - INFO: - Запрос на сайт: https://api.twelvedata.com
+2026-01-17 14:32:19,187 - stock_prices - app - ERROR: - Сайт не доступен: 500
+2026-01-17 14:32:19,188 - wrapper - app - INFO: - Успешный запуск функции: stock_prices - Функция, которая возвращает стоимость акций по API запросу
+2026-01-17 14:32:19,189 - stock_prices - app - INFO: - Запрос на сайт: https://api.twelvedata.com
+2026-01-17 14:32:19,189 - stock_prices - app - ERROR: - Неверный формат файла JSON
+Traceback (most recent call last):
+  File "D:\Projects\HomeWorks\Kursovaya_1\src\utils.py", line 117, in stock_prices
+    data = data.json()
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ivan\AppData\Local\Programs\Python\Python314\Lib\unittest\mock.py", line 1234, in _execute_mock_call
+    raise effect
+json.decoder.JSONDecodeError: err: line 1 column 1 (char 0)
+2026-01-17 14:32:19,190 - wrapper - app - INFO: - Успешный запуск функции: stock_prices - Функция, которая возвращает стоимость акций по API запросу
+2026-01-17 14:32:19,195 - main_info - app - INFO: - Вывод итогового JSON-ответа.
+2026-01-17 14:32:19,196 - wrapper - app - INFO: - Успешный запуск функции: main_info - Основная функция, собирает все данные из модуля utils.py в итоговый json для станицы главная.
