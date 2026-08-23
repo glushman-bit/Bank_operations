@@ -19,6 +19,12 @@ coverage = "^7.15.4"
 [tool.poetry.group.dev.dependencies]
 pytest-cov = "^7.1.0"
 
+
+[tool.poetry.group.lint.dependencies]
+isort = "^8.0.1"
+black = "^26.5.1"
+flake8 = "^7.3.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -29,12 +35,7 @@ dev = [
     "pytest (>=9.0.2,<10.0.0)",
     "pytest-cov (>=7.0.0,<8.0.0)"
 ]
-lint = [
-    "isort (>=7.0.0,<8.0.0)",
-    "black (>=25.12.0,<26.0.0)",
-    "flake8 (>=7.3.0,<8.0.0)",
-    "mypy (>=1.19.1,<2.0.0)"
-]
+
 
 [tool.black]
 line_length = 119
