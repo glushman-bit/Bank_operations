@@ -6,6 +6,7 @@ import pandas as pd
 from src.reports import spending_by_category
 from src.services import cashback_analysis
 from src.services import find_transactions_by_phone
+from views import main_info
 
 df = pd.read_excel("data/operations.xlsx")
 with open("data/user_settings.json", "r", encoding="utf-8") as f:
@@ -17,7 +18,7 @@ with open("data/user_settings.json", "r", encoding="utf-8") as f:
 def run_app():
     """Основная функция запуска приложения."""
 
-    # print(main_info(df, currency, stocks))
+    print(main_info(df, currency, stocks))
 
     user_input = input("Проверить транзакции по номеру телефона? да/нет - ").strip().lower()
     if user_input == "да":
