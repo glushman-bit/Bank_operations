@@ -39,7 +39,6 @@ def test_main_info_with_mocks(main_info_data, currency, stock):
         assert result["currency_rates"] == [{"currency": currency, "rate": 73.21}]
         assert result["stock_prices"] == [{"stock": stock, "price": 150.12}]
 
-
 [
     {"last_digit": "1112", "total_spent": 46207.08, "cashback": 462.07},
     {"last_digit": "4556", "total_spent": 1780150.21, "cashback": 17801.5},
