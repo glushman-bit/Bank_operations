@@ -1,10 +1,11 @@
-import pytest
 import pandas as pd
+import pytest
 
 
 @pytest.fixture
 def cashback_and_phone_data() -> pd.DataFrame:
     """Фикстура для services.py"""
+
     return pd.DataFrame(
         {
             "Дата операции": [
@@ -34,6 +35,7 @@ def cashback_and_phone_data() -> pd.DataFrame:
 @pytest.fixture
 def transactions_data() -> pd.DataFrame:
     """Фикстура для reports.py"""
+
     return pd.DataFrame(
         {
             "Дата платежа": [
@@ -58,6 +60,7 @@ def transactions_data() -> pd.DataFrame:
 @pytest.fixture()
 def main_info_data() -> pd.DataFrame:
     """Фикстура для views.py"""
+
     return pd.DataFrame(
         {
             "Дата платежа": [
@@ -69,5 +72,21 @@ def main_info_data() -> pd.DataFrame:
             "Описание": ["Перевод Кредитная карта. ТП 10.2 RUR", "Покупка в магазине"],
             "Номер карты": ["1111", "2222"],
             "Кэшбэк": [20.0, 30.0],
+        }
+    )
+
+
+@pytest.fixture()
+def filter_data_empty():
+    """Фикстура для services.py."""
+
+    return pd.DataFrame(
+        {
+            "Дата операции": [
+                "15.08.2026 12:00:00",
+            ],
+            "Кэшбэк": [100],
+            "Сумма платежа": [-1000],
+            "Категория": ["Продукты"],
         }
     )

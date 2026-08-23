@@ -1,7 +1,9 @@
-import pytest
-from src.services import cashback_analysis, find_transactions_by_phone
-
 import json
+
+import pytest
+
+from src.services import cashback_analysis
+from src.services import find_transactions_by_phone
 
 
 @pytest.mark.parametrize(
@@ -37,3 +39,8 @@ def test_find_transactions_by_phone_not_find(cashback_and_phone_data):
     phone = "9999999999"
     result = find_transactions_by_phone(cashback_and_phone_data, phone)
     assert result == []
+
+
+def test_cashback_analysis_filter_data_empty(filter_data_empty):
+    result = cashback_analysis(filter_data_empty, 2025, 1)
+    assert result == "По вашему запросу ничего не найдено."
