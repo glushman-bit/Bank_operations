@@ -16,14 +16,16 @@ def normalize_phone(value: str) -> str:
 
 
 @log()
-def find_transactions_by_phone(df: DataFrame, phone: str) -> list[Any]:
+def find_transactions_by_phone(df: DataFrame, phone: str) -> str:
     """Возвращает JSON со всеми транзакциями, содержащими указанный номер телефона."""
 
     normalized_phone = normalize_phone(phone)
+
     if not normalized_phone:
         logger.warning("Ошибка ввода номера телефона: тел.=%s", phone)
 
-        return []
+        return "Ошибка ввода номера телефона."
+
 
     normalized_search = df["Описание"].astype(str).str.replace(r"\D", "", regex=True)
 
@@ -32,11 +34,12 @@ def find_transactions_by_phone(df: DataFrame, phone: str) -> list[Any]:
     if not mask.any():
         logger.warning("Введенный номер телефона не найден: тел.=%s", phone)
 
-        return []
+        return "Номер телефона не найден."
 
     result_df = df.loc[mask, ["Дата операции", "Сумма платежа", "Категория", "Описание"]]
 
     logger.info("Вывод транзакций по номеру телефона: тел.=%s", phone)
+
     return result_df.to_json(orient="records", force_ascii=False, indent=4)
 
 
