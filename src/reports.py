@@ -4,7 +4,8 @@ from typing import Optional
 
 import pandas as pd
 
-from src.decorators import log, logger
+from src.decorators import log
+from src.decorators import logger
 
 
 @log()
@@ -44,7 +45,8 @@ def spending_by_category(transactions: pd.DataFrame, category: str, date: Option
 
         return json.dumps(result, ensure_ascii=False, indent=4)
 
-    total_spent = int(filtered["Сумма платежа"].sum() * -1)
+    total_spent = float(filtered["Сумма платежа"].sum() * -1)
+
     logger.info("Расчет трат: количество операций=%s, сумма=%s", len(filtered), round(total_spent, 2))
 
     result = {
