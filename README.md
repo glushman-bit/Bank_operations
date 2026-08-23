@@ -120,7 +120,7 @@
 
 ## Структура проекта
 
-Примерная структура проекта:
+Структура проекта:
 
 ```text
 project/
@@ -313,7 +313,6 @@ currency = ",".join(settings["user_currencies"])
 
 ```bash
 git clone <URL-репозитория>
-cd <название-проекта>
 ```
 
 ### 2. Создание виртуального окружения
@@ -345,6 +344,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Если проект использует `poetry`:
+
+```bash
+poetry init
+```
+
 ---
 
 ## Настройка переменных окружения
@@ -362,6 +367,7 @@ pip install -r requirements.txt
 ```env
 API_KEY_C=your_currency_api_key
 API_KEY_S=your_stocks_api_key
+APIFINN=your_stocks_key
 ```
 
 ### Важно
@@ -392,12 +398,6 @@ load_dotenv()
 
 ```
 os.getenv("API_KEY_C")
-```
-
-или:
-
-```
-os.getenv("API_KEY_S")
 ```
 
 ---
@@ -817,7 +817,7 @@ def cashback_analysis(...) -> str:
                                │
                                ▼
                     ┌─────────────────────┐
-                    │      DataFrame       │
+                    │      DataFrame      │
                     └──────────┬──────────┘
                                │
                 ┌──────────────┼──────────────┐
@@ -830,8 +830,8 @@ def cashback_analysis(...) -> str:
                 └───────────────┼───────────────┘
                                 ▼
                        ┌────────────────┐
-                       │    views.py     │
-                       │   main_info()   │
+                       │    views.py    │
+                       │   main_info()  │
                        └────────┬───────┘
                                 │
                                 ▼
