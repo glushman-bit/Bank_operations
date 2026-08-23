@@ -56,6 +56,10 @@ def cashback_analysis(df: DataFrame, year: int, month: int) -> Dict[str, float]:
         & (df["Сумма платежа"] < 0)
     ]
 
+    if filter_data.empty:
+        logger.warning("Кэшбек за данный период не найден: год=%s, месяц=%s", year, month)
+        return "По вашему зпросу ничего не найдено."
+
     expenses_by_category = filter_data.groupby("Категория")["Сумма платежа"].sum()
 
     cashback_by_category = (abs(expenses_by_category) / 100).round(2)
