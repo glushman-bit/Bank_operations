@@ -32,13 +32,13 @@ def test_find_transactions_by_phone(cashback_and_phone_data):
 def test_find_transactions_by_phone_empty(cashback_and_phone_data):
     phone = ""
     result = find_transactions_by_phone(cashback_and_phone_data, phone)
-    assert result == []
+    assert result == "Ошибка ввода номера телефона."
 
 
 def test_find_transactions_by_phone_not_find(cashback_and_phone_data):
     phone = "9999999999"
     result = find_transactions_by_phone(cashback_and_phone_data, phone)
-    assert result == []
+    assert result == "Номер телефона не найден."
 
 
 def test_cashback_analysis_filter_data_empty(filter_data_empty):
