@@ -1,5 +1,3 @@
-
-
 from src.decorators import log, logger
 
 import pandas as pd
@@ -22,7 +20,7 @@ with open("data/user_settings.json", "r", encoding="utf-8") as f:
 
 if __name__ == '__main__':
 
-    print(main_info(df, currency, stocks))
+    # print(main_info(df, currency, stocks))
     user_input = input("Проверить транзакции по номеру телефона? да/нет - ").lower()
     if user_input == "да":
         phone = input("Введите номер телефона или первые цифры: ").strip()
@@ -33,10 +31,10 @@ if __name__ == '__main__':
         print("Операция отменена.")
 
     user_input = input("Проверить транзакции по категории за 3 месяца? да/нет - ").strip().lower()
+
     if user_input == "да":
         user_category = input("Введите категорию: ")
         user_date = input("Введите дату конца периода в формате, по умолчанию дата-сегодня: гггг.мм.дд: ").strip()
-
 
         try:
             user_date = datetime.strptime(user_date, "%Y.%m.%d") if user_date else datetime.today()

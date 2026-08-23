@@ -4,8 +4,7 @@ from typing import Optional
 
 import pandas as pd
 
-from src.decorators import log
-from src.decorators import logger
+from src.decorators import log, logger
 
 
 @log()

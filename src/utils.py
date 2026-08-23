@@ -1,15 +1,13 @@
 import json
 import os
 from datetime import datetime
-from typing import Dict
-from typing import List
+from typing import Dict, List
 
 import requests
 from dotenv import load_dotenv
 from pandas import DataFrame
 
-from src.decorators import log
-from src.decorators import logger
+from src.decorators import log, logger
 
 load_dotenv()
 
