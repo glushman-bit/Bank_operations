@@ -50,11 +50,20 @@ def run_app():
     user_input = input("Проверить выгодные категории повышенного кешбэка за месяц? да/нет - ").strip().lower()
 
     if user_input == "да":
-        input_year = int(input("введите год в формате: гггг - ").strip())
-        input_month = int(input("введите месяц в формате: мм - ").strip())
 
-        print(cashback_analysis(df, input_year, input_month))
-        print("Конец работы программы.")
+        try:
+            input_year = int(input("введите год в формате: гггг - ").strip())
+            input_month = int(input("введите месяц в формате: мм - ").strip())
+
+            if not 1 <= input_month <= 12:
+                raise ValueError("Месяц должен быть от 1 до 12.")
+
+            print(cashback_analysis(df, input_year, input_month))
+            print("Конец работы программы.")
+
+        except ValueError:
+            print("Ошибка: год и месяц должны быть числом.")
+
 
     else:
 
