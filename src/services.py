@@ -1,10 +1,6 @@
-"""
-Сервисы
-"""
-
 import json
 import re
-from typing import Dict
+from typing import Any
 
 import pandas as pd
 from pandas import DataFrame
@@ -15,17 +11,21 @@ from src.decorators import logger
 
 def normalize_phone(value: str) -> str:
     """Оставляет только цифры в номере телефона."""
+
     return re.sub(r"\D", "", value)
 
 
 @log()
-def find_transactions_by_phone(df: DataFrame, phone: str) -> list:
+def find_transactions_by_phone(df: DataFrame, phone: str) -> str:
     """Возвращает JSON со всеми транзакциями, содержащими указанный номер телефона."""
 
     normalized_phone = normalize_phone(phone)
+
     if not normalized_phone:
         logger.warning("Ошибка ввода номера телефона: тел.=%s", phone)
-        return []
+
+        return "Ошибка ввода номера телефона."
+
 
     normalized_search = df["Описание"].astype(str).str.replace(r"\D", "", regex=True)
 
@@ -33,16 +33,18 @@ def find_transactions_by_phone(df: DataFrame, phone: str) -> list:
 
     if not mask.any():
         logger.warning("Введенный номер телефона не найден: тел.=%s", phone)
-        return []
+
+        return "Номер телефона не найден."
 
     result_df = df.loc[mask, ["Дата операции", "Сумма платежа", "Категория", "Описание"]]
 
     logger.info("Вывод транзакций по номеру телефона: тел.=%s", phone)
+
     return result_df.to_json(orient="records", force_ascii=False, indent=4)
 
 
 @log()
-def cashback_analysis(df: DataFrame, year: int, month: int) -> Dict[str, float]:
+def cashback_analysis(df: DataFrame, year: int, month: int) -> str:
     """Анализирует категории повышенного кэшбека."""
 
     df = df.copy()
@@ -58,7 +60,8 @@ def cashback_analysis(df: DataFrame, year: int, month: int) -> Dict[str, float]:
 
     if filter_data.empty:
         logger.warning("Кэшбек за данный период не найден: год=%s, месяц=%s", year, month)
-        return "По вашему зпросу ничего не найдено."
+
+        return "По вашему запросу ничего не найдено."
 
     expenses_by_category = filter_data.groupby("Категория")["Сумма платежа"].sum()
 

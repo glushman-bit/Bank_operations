@@ -1,11 +1,14 @@
 import json
+from unittest.mock import Mock
+from unittest.mock import patch
+
 from freezegun import freeze_time
-from unittest.mock import patch, Mock
-from src.utils import get_time_for_greeting
-from src.utils import get_list_cards
-from src.utils import top_transactions
+
 from src.utils import get_curs_currency
+from src.utils import get_list_cards
+from src.utils import get_time_for_greeting
 from src.utils import stock_prices
+from src.utils import top_transactions
 
 
 @freeze_time("2026-01-01 7:00:00")
@@ -34,8 +37,8 @@ def test_get_time_for_greeting_night():
 
 def test_get_list_cards_correct(main_info_data):
     assert get_list_cards(main_info_data) == [
-        {"last_digit": "1111", "total_spent": 2000, "cashback": 20.0},
-        {"last_digit": "2222", "total_spent": 3000, "cashback": 30.0},
+        {"last_digits": "1111", "total_spent": 2000, "cashback": 20.0},
+        {"last_digits": "2222", "total_spent": 3000, "cashback": 30.0},
     ]
 
 
@@ -77,7 +80,7 @@ def test_get_curs_currency_not_json():
     response_mock.status_code = 200
 
     with patch("src.utils.requests.get", return_value=response_mock):
-        assert get_curs_currency(currency) == 0
+        assert get_curs_currency(currency) == []
 
 
 def test_stock_prices_correct():
@@ -106,4 +109,4 @@ def test_stock_prices_not_json():
     response_mock.status_code = 200
 
     with patch("src.utils.requests.get", return_value=response_mock):
-        assert stock_prices(stock) == 0
+        assert stock_prices(stock) == []
